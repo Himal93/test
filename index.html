@@ -1,0 +1,129 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <script>
+    let date= new Date().toLocaleTimeString();
+    let datetime = new Date().toLocaleDateString();
+   
+  // DOM content loader will load the code immediately when html is loaded.
+  // loading date and time inside paragraph1 and 2.
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.paragraph-1').innerHTML = date;
+    }); 
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.paragraph-2').innerHTML = datetime;
+    }); 
+
+
+
+//  for license
+function onsub(){
+      let firstname = document.querySelector(".firstname");
+      let lastname = document.querySelector(".lastname");
+      let phoneNumber = document.querySelector(".phn");
+      let label= document.getElementById("license-number");
+      let license= document.querySelector(".license");
+      console.log(label.value);
+      if(label.value == "012001"){
+        firstname.innerHTML="Himal";
+        lastname.innerHTML ="Rana";
+        phoneNumber.innerHTML="980550505"
+        
+        license.innerHTML=label.value;
+      }
+       else if(label.value == "012002"){
+        firstname.innerHTML="Prena";
+        lastname.innerHTML ="Phunyal";
+        phoneNumber.innerHTML="9805565653"
+        license.innerHTML=label.value;
+      }
+      else{
+        alert("Enter correct license number ")
+        label.value="";
+      }
+}
+
+  </script>
+  <body>
+
+    <div class="logo">
+    <img src="emblem_of_Nepal.png" >
+    <p>
+      GOVERNMENT OF NEPAL<br>
+      MINISTRY OF HOME AFFAIRS<br>
+      TRAFFIC POLICE DEPARTMENT<br>
+      TRAFFIC VIOLATION TRACKER(TVT)
+  </p>
+    </div>
+    <!--HEader secetionnnn Startssssss-->
+    <header>
+    <nav class="navbar">
+      <div class="navdiv">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Violation Record</a></li>
+          <li><a href="#">Violator Record</a></li>
+          <li><a href="#">Cheat Record</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+  </nav>
+  </header>
+    <!--HEader closesss-->
+
+    
+    <div class="center">
+    <p>TRAFFIC VIOLATION TRACKER SYSTEM</p>
+    <img src="TVT_logo-removebg-preview.png" alt="" class="image">
+    <p class="paragraph-1"></p>
+    <p class="paragraph-2"></p>
+
+    </div>
+
+    <!--BOx wala element-->
+    <div class="box-main">
+    <div class="box">
+       <class="license-search-form">
+        <h3 class="h3-label">Smart-Card License Search</h3>
+        <div class="input-div">
+        <label for="license-number" class="label-name">License Number</label> <br/>
+        <input type="text" id="license-number" name="license-number" placeholder="Enter License Number"  ></div>
+        <button type="submit" class="btn" onclick="onsub()">Search License</button>
+    </form>
+    </div>
+    <div class="box2">
+    <form method="" class="form">
+       <div class="name">
+        <div class="name1">
+               <h4>FirstName</h4>
+               <p class="p3 firstname"></p>
+               </div>
+               <div class="name1">
+               <h4>LastName</h4>
+               <p class="p3 lastname"></p>
+               </div>
+               <div class="name1">
+               <h4>PhoneNumber</h4>
+               <p class="p3 phn"></p>
+              </div>
+              <div class="name1">
+                <h4>License Number</h4>
+                <p class="p3 license"></p>
+               </div>
+    </div>
+    </form>
+    </div>
+</div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+ 
+</html>
